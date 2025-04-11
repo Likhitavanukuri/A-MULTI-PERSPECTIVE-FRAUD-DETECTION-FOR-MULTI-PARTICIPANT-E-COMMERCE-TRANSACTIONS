@@ -1,0 +1,50 @@
+## 🚀 Setup Instructions
+
+### Prerequisites
+
+- Python 3.8+
+- Flask
+- scikit-learn
+- joblib
+
+### Install Dependencies
+
+```bash
+pip install flask scikit-learn joblib
+Run Flask API
+bash
+Copy
+Edit
+python app.py
+It will be available at http://localhost:5000/predict
+
+Sample JSON Input
+json
+Copy
+Edit
+{
+  "transaction_amount": 1200,
+  "account_age_days": 45,
+  "num_previous_transactions": 10,
+  "device_type": "mobile"
+}
+📡 Salesforce Integration
+Apex class FraudPredictionService.cls is used to send callouts to the Flask API. Update the setEndpoint() URL with your Flask deployment endpoint.
+
+📈 Model Training (Not Included)
+The fraud detection model (fraud_model.joblib) is assumed to be pre-trained using:
+
+Decision Tree / Random Forest
+
+SMOTE for imbalance handling
+
+Evaluation metrics like F1-score, ROC-AUC
+
+📚 Future Improvements
+Use real Salesforce data via API callouts
+
+Implement OAuth-secured API
+
+Add logging, rate limiting, and error monitoring
+
+Deploy API on AWS/GCP
